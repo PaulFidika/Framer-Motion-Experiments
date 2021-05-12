@@ -13,7 +13,7 @@ const spring = {
   duration: 1
 }
 
-const Person = ({ name, column }) => {
+const Person = ({ name, column, callback }) => {
   const [columnNumber, setColumn] = useState(column)
 
   return (
@@ -29,8 +29,10 @@ const Person = ({ name, column }) => {
         // gridArea: `${person.column}`,
         gridColumnStart: `${column + 1}`,
         // gridRowStart: 'top',
-        backgroundColor: '#000'
+        backgroundColor: '#000',
+        scale: 2 * Math.random()
       }}
+      onLayoutUpdate={latest => callback(latest)}
     >
       {name + ' ' + columnNumber}
     </motion.div>

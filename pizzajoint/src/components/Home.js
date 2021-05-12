@@ -168,7 +168,6 @@ const Home = () => {
               // list.unshift(person)
               list[0].column = (list[0].column + 1) % 3
               setList([...list])
-              console.log(list)
               //setList([list[0], list[1], list[2]])
 
               const timer = setTimeout(() => {
