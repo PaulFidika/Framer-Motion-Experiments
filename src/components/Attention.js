@@ -2,16 +2,17 @@ import React from 'react'
 import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
 
 const Attention = () => {
-  //   const angle = useMotionValue(0)
-  //   const gradientTransform = useTransform(angle, [0, 90], ['rotate(0)', 'rotate(90)'])
+  const angle = useMotionValue(0)
+  const gradientTransform = useTransform(angle, [0, 360], ['rotate(0)', 'rotate(360)'])
 
-  //   React.useEffect(() => {
-  //     const controls = animate(angle, 90, {
-  //       type: 'spring',
-  //       stiffness: 40
-  //     })
-  //     return controls.stop
-  //   }, [angle])
+  React.useEffect(() => {
+    angle.set(180)
+    // const controls = animate(angle, 90, {
+    //   type: 'spring',
+    //   stiffness: 40
+    // })
+    // return controls.stop
+  }, [])
 
   return (
     <svg width={150} height={150} overflow="visible" xmlns="http://www.w3.org/2000/svg">
@@ -19,20 +20,21 @@ const Attention = () => {
         <motion.linearGradient
           id="gradient2"
           animate={{
-            x1: [0, 0.8],
+            x1: [0, 0],
             y1: [0, 1],
-            x2: [1, 0.2],
+            x2: [1, 1],
             y2: [1, 0]
           }}
           transition={{
             repeat: Infinity,
             repeatType: 'mirror',
-            ease: 'easeInOut',
+            ease: 'linear',
             duration: 2
           }}
+          gradientTransform={gradientTransform}
         >
-          <stop offset={0} stopColor="hsl(204, 100%, 50%)" />
-          <stop offset={1} stopColor="hsl(328, 100%, 50%)" />
+          <stop offset={0.1} stopColor="hsl(190, 90%, 90%)" />
+          <stop offset={0.3} stopColor="hsl(220, 80%, 50%)" />
         </motion.linearGradient>
       </defs>
 

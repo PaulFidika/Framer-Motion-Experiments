@@ -43,9 +43,10 @@ const Attention2 = () => {
         ry={20}
         fill="#fff"
         stroke="url(#gradient3)"
-        strokeWidth="10px"
+        strokeWidth="12"
         style={{ x: 100, y: -50 }}
       />
+      <rect width={150} height={150} rx={20} ry={20} fill="#fff" style={{ x: 100, y: -50 }} />
     </svg>
   )
 }
