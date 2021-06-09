@@ -140,6 +140,33 @@ const Home = () => {
 
   return (
     <>
+      <div
+        className="img-container"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '20rem',
+          width: '20rem'
+        }}
+      >
+        <motion.img
+          animate={{ rotate: 720 }}
+          transition={{
+            type: 'easeIn',
+            duration: 2,
+            repeat: Infinity,
+            repeatType: 'loop',
+            repeatDelay: 0
+          }}
+          src="../images/focus_wheel-22x.png"
+          style={{
+            height: '4rem',
+            width: '4rem'
+          }}
+        />
+      </div>
+
       <motion.div
         className="home container"
         variants={containerVariants}

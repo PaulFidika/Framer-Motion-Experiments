@@ -19,6 +19,8 @@ import Grid from '@material-ui/core/Grid'
 import Ripple3 from './components/Ripple3'
 import Ripple4 from './components/Ripple4'
 import Ripple2 from './components/Ripple2'
+import RippleAllDirection from './components/RippleAllDirection'
+import Visualizer from './components/AudioAPI'
 
 function App() {
   const location = useLocation()
@@ -43,6 +45,7 @@ function App() {
     <>
       {/* <Header />
       <Modal showModal={showModal} /> */}
+      <Visualizer />
       <AnimateSharedLayout>
         <AnimatePresence exitBeforeEnter onExitComplete={() => setShowModal(false)}>
           {/* <Attention />
@@ -60,7 +63,7 @@ function App() {
             {[...Array(3).keys()].map(i => {
               return (
                 <Grid item key={i}>
-                  <Ripple4 id={i} />
+                  <RippleAllDirection id={i} />
                 </Grid>
               )
             })}
